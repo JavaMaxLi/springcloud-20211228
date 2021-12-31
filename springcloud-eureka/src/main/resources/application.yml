@@ -1,0 +1,17 @@
+server:
+  port: 8002
+
+spring:
+  application:
+    name: springcloud-eureka
+
+#eureka配置
+eureka:
+  instance:
+    hostname: u.2jiayou.cn  #eureka服务端名称
+  client:
+    register-with-eureka: false   #是否像注册中心注册自己
+    #单机：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #集群：defaultZone: http://localhost:8003/eureka/,http://localhost:8004/eureka/
+    service-url:
+      defaultZone: http://vote.2jiayou.cn:8003/eureka/,http://user.2jiayou.cn:8004/eureka/

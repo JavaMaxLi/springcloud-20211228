@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8012
 
 mybatis:
   type-aliases-package: com.bean.*
@@ -14,7 +14,7 @@ spring:
   datasource:     #mybatis配置
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/spring_boot?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/spring_boot_test02?useUnicode=true&characterEncoding=utf-8
     username: root
     password: Root123456
 
@@ -26,5 +26,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
   instance:
-    instance-id: provider   #修改默认描述信息
+    instance-id: provider03   #修改默认描述信息
+
 

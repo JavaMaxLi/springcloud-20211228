@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-provider</artifactId>
+    <artifactId>springcloud-provider-03</artifactId>
 
     <dependencies>
         <!--依赖实体类-->

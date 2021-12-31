@@ -9,18 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springcloud-api</artifactId>
+    <artifactId>springcloud-eureka</artifactId>
 
-    <!--当前MModule自己需要的依赖，指向父项目依赖-->
     <dependencies>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!--Feign-->
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
             <version>1.4.6.RELEASE</version>
         </dependency>
     </dependencies>
