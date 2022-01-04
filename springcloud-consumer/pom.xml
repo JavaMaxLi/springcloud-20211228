@@ -27,12 +27,6 @@
             <artifactId>spring-cloud-starter-ribbon</artifactId>
             <version>1.4.6.RELEASE</version>
         </dependency>
-        <!--Feign-->
-       <!-- <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-            <version>1.4.6.RELEASE</version>
-        </dependency>-->
         <!--Eureka-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -46,4 +40,15 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>springcloud-consumer</finalName>
+        <plugins>
+            <plugin>
+                <!--该插件主要用途：构建可执行的JAR -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+
+            </plugin>
+        </plugins>
+    </build>
 </project>
