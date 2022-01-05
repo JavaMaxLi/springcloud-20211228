@@ -12,7 +12,7 @@ import java.util.List;
  * @author LiXiaoFeng
  * @date 2021年12月30日 15:45
  */
-@FeignClient(value = "springcloud-provider")
+@FeignClient(value = "springcloud-provider",fallbackFactory = UserFallbackFactory.class)//面向接口服务
 @Component
 public interface UserService {
     @GetMapping(value = "/user/search")

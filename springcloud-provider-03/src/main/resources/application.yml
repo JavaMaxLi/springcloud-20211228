@@ -10,7 +10,7 @@ mybatis:
 
 spring:
   application:
-    name: springcloud-provider
+    name: springcloud-provider-03
   datasource:     #mybatis配置
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver

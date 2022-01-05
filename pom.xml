@@ -21,6 +21,10 @@
         <module>springcloud-eureka-03</module>
         <module>springcloud-provider-02</module>
         <module>springcloud-provider-03</module>
+        <module>springcloud-dashboard</module>
+        <module>springcloud-zuul</module>
+        <module>springcloud-config</module>
+        <module>springcloud-config-client</module>
     </modules>
 
     <!--打包方式

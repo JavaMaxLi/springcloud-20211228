@@ -26,5 +26,5 @@ eureka:
     service-url:
       defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
   instance:
-    instance-id: provider   #修改默认描述信息
+    instance-id: provider-hystrix   #修改默认描述信息
 

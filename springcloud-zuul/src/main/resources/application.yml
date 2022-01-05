@@ -1,0 +1,26 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: springcloud-zull-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+  instance:
+    instance-id: zull9002.com
+    prefer-ip-address: true
+#路由网关
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: springcloud-provider
+    api-b:
+      path: /api-b/**
+      serviceId: springcloud-provider-02
+  ignored-services: "*"          #忽略通过服务名称直接访问的方式
+#    - springcloud-provider
+#    - springcloud-provider-02

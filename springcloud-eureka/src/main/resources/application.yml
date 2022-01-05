@@ -10,6 +10,8 @@ eureka:
   instance:
     hostname: u.2jiayou.cn  #eureka服务端名称
   client:
+    healthcheck:
+      enabled: false
     register-with-eureka: false   #是否像注册中心注册自己
     #单机：defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
     #集群：defaultZone: http://localhost:8003/eureka/,http://localhost:8004/eureka/

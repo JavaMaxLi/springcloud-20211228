@@ -10,7 +10,7 @@ mybatis:
 
 spring:
   application:
-    name: springcloud-provider
+    name: springcloud-provider-02
   datasource:     #mybatis配置
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -28,4 +28,28 @@ eureka:
   instance:
     instance-id: provider02   #修改默认描述信息
 
+---
+spring:
+  profiles:
+    active: dev
+server:
+  port: 8201
 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/
+
+---
+spring:
+  profiles: test
+  application:
+    name: provider01-test
+
+server:
+  port: 8202
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka/,http://localhost:8003/eureka/,http://localhost:8004/eureka/

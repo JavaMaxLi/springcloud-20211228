@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: application   #要获取的资源名称
+      profile: test
+      uri: http://localhost:9003
+      label: master
+
+
+
+

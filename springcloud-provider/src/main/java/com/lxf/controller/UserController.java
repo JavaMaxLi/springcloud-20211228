@@ -2,7 +2,9 @@ package com.lxf.controller;
 
 import com.bean.user.User;
 import com.lxf.service.UserService;
+import com.lxf.utils.EmptyHelper;
 import com.lxf.utils.RESTResultBean;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
@@ -31,10 +33,27 @@ public class UserController {
      * @return
      */
     @GetMapping(value = "/search")
+    @HystrixCommand(fallbackMethod = "searchUserFallback")
     public RESTResultBean searchUser(User user) {
         System.out.println("====user========"+user.toString());
         RESTResultBean result = new RESTResultBean();
-        result.setData(userService.selectList(user));
+        List<User> userList = userService.selectList(user);
+        if (EmptyHelper.isEmpty(userList)) {
+            throw new RuntimeException("没有数据");
+        }
+        result.setData(userList);
+        return result;
+    }
+
+    /**
+     * 熔断方法（参数需一致）
+     * @param user
+     * @return
+     */
+    public RESTResultBean searchUserFallback(User user) {
+        RESTResultBean result = new RESTResultBean();
+        result.setMessage("错误查询");
+        result.setCode("1001");
         return result;
     }
 
