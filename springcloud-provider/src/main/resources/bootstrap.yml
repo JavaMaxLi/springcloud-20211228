@@ -1,0 +1,9 @@
+#使用github远程配置文件
+spring:
+  cloud:
+    config:
+      uri: http://localhost:9003      #本地服务链接
+      name: provider-config             #配置文件名称
+      label: master                   #哪个分支下
+      profile: dev                    #使用哪个环境
+

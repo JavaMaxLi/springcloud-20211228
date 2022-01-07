@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Bean;
 @MapperScan(basePackages = {"com.lxf.dao"})
 @EnableEurekaClient
 @EnableHystrix
+
 public class ProviderApplication {
 
     public static void main(String[] args) {

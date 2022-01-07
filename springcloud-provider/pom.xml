@@ -12,6 +12,14 @@
     <artifactId>springcloud-provider</artifactId>
 
     <dependencies>
+
+        <!--springcloud-config-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+            <version>2.1.1.RELEASE</version>
+        </dependency>
+
         <!--依赖实体类-->
         <dependency>
             <groupId>com.lxf</groupId>
